@@ -15,6 +15,7 @@ def get_details():
 def get_health():
     return jsonify({
         "status": "healthy"
+        "Time": datetime.datetime.utcnow().isoformat() + "Z"
     })
 
 if __name__ == '__main__':  
