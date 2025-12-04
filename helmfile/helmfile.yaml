@@ -1,0 +1,18 @@
+repositories:
+  - name: argo-helm
+    url: https://argoproj.github.io/argo-helm
+
+releases:
+  - name: argocd
+    namespace: argocd
+    labels:
+      app: argocd
+    createNamespace: true
+    chart: argo-helm/argo-cd
+    disableValidationOnInstall: true
+    version: 8.3.4
+    values:
+      - values.yaml.gotmpl
+    missingFileHandler: Error
+    installed: true
+    wait: true
